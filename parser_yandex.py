@@ -21,7 +21,7 @@ async def main():
                 # TODO: Убрать рекламу
                 # TODO: Распарсить мелкие сектора
                 desc = soup.find("div", class_="news-info__post-body html-content page-content")
-                tags = [tag.text for tag in soup.find_all("a", class_="news-info__tag")]
+                tags = [tag.text.replace("#", "") for tag in soup.find_all("a", class_="news-info__tag")]
 
                 print(title.text)
                 print(desc)
